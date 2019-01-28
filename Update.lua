@@ -1,5 +1,5 @@
 print("1) Drone")
-print("2) ..")
+print("2) Update")
 
 local option 	= tonumber(read())
 local url 		= ""
@@ -9,7 +9,14 @@ local file		= ""
 if option == 1 then
 	url 	= "https://raw.githubusercontent.com/dani0105/LUA-Drone/master/Drone.lua"
 	name 	= "Drone"
+elseif option == 2 then
+	url		= "https://raw.githubusercontent.com/dani0105/LUA-Drone/master/Update.lua"
+	name 	= "update"
+else
+	print("opcion invalidad")
+	return
 end
+
 
 data = http.get(url)
 
