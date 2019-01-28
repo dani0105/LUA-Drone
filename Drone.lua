@@ -57,7 +57,7 @@ while true do
 		end
 
 		if Table[1] == "suck" then
-			while turtle.seuck() do
+			while turtle.suck() do
 				rednet.send(idComputer,"Recolectando")
 			end
 			rednet.send(idComputer,"terminado;")
