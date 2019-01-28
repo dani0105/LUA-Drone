@@ -11,7 +11,7 @@ while true do
 	local id,response =rednet.receive()
 	local Table = {}
 	if id ==idComputer then
-		for i in string.gmatch(response,"%s+") do
+		for i in string.gmatch(response,"%S+") do
 			table.insert(Table,i)
 		end
 
@@ -51,8 +51,9 @@ while true do
 					turtle.turnRight()
 				end
 			end
-
 			rednet.send(idComputer,"Girando")
+
+			rednet.send(idComputer,"terminado;")
 		end
 
 		if Table[1] == "suck" then
@@ -102,7 +103,7 @@ while true do
 		end
 
 		if Table[1] == "scan" then
-			local done,data = turtle.insepct()
+			local done,data = turtle.inspect()
 			if done then
 				rednet.send(idComputerer,"Bloque "..data.name)
 				rednet.send(idComputer,"terminado;")
