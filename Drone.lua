@@ -105,7 +105,7 @@ while true do
 		if Table[1] == "scan" then
 			local done,data = turtle.inspect()
 			if done then
-				rednet.send(idComputerer,"Bloque "..data.name)
+				rednet.send(idComputer,"Bloque "..data.name)
 				rednet.send(idComputer,"terminado;")
 			else
 				rednet.send(idComputer,"No Hay Bloques")
