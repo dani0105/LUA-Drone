@@ -21,7 +21,7 @@ local done,abajo = turtle.inspectUp()
 if done==false then abajo="nada" end
 local done,arriba = turtle.inspectDown()
 if done==false then arriba="nada" end
-fuel = turtle.getFuelLevels()
+fuel = turtle.getFuelLevel()
 
 Table = {frente,abajo,arriba,fuel,direction}
 rednet.send(idComputer,Table)
@@ -77,7 +77,7 @@ while true do
 		if done==false then abajo="nada" end
 		local done,arriba = turtle.inspectDown()
 		if done==false then arriba="nada" end
-		fuel = turtle.getFuelLevels()
+		fuel = turtle.getFuelLevel()
 
 
 		Table = {frente,abajo,arriba,fuel,direction}
