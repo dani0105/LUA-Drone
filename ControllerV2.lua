@@ -7,6 +7,11 @@ while true do
 			rednet.broadcast("up")
 			state = "waiting"
 		end
+
+		if key == keys.enter then
+			rednet.broadcast("up")
+			state = "waiting"
+		end
 	else
 		local id,data =rednet.receive()
 		term.clear()
