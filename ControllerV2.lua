@@ -70,8 +70,17 @@ while true do
 		print(data[6])
 
 		term.setCursorPos(1,9)
+		print("Inventario")
+		local f = 1
 		for i=1,16 do
-			write(data[7][i].." ")
+			f = f+1
+			if f ==4 then
+				write("\n"..data[7][i].." ")
+				f=1
+			else
+			 	write(data[7][i].." ")
+			end
+			
 		end
 		state = "ready"
 	end

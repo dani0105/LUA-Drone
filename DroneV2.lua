@@ -87,7 +87,7 @@ while true do
 		end
 
 		fuel = turtle.getFuelLevel()
-		local inventory 
+		local inventory = {}
 		for i=1,16 do
 			table.insert(inventory,turtle.getItemCount(i))
 		end
