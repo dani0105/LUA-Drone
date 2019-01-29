@@ -13,30 +13,37 @@ while true do
 		event, key = os.pullEvent("key")
 		if key == keys.up then
 			rednet.broadcast("up")
+			state = "waiting"
 		end
 
 		if key == keys.down then
 			rednet.broadcast("down")
+			state = "waiting"
 		end
 
 		if key == keys.s then
 			rednet.broadcast("s")
+			state = "waiting"
 		end
 
 		if key == keys.a then
 			rednet.broadcast("a")
+			state = "waiting"
 		end
 
 		if key == keys.d then
 			rednet.broadcast("d")
+			state = "waiting"
 		end
 
 		if key == keys.w then
 			rednet.broadcast("w")
+			state = "waiting"
 		end
 
 		if key == keys.enter then
 			rednet.broadcast("enter")
+			state = "waiting"
 		end
 
 		if key == keys.f then
@@ -46,6 +53,7 @@ while true do
 
 		if key == keys.r then
 			rednet.broadcast("r")
+			state = "waiting"
 		end
 
 		if key == keys.e then
@@ -53,7 +61,7 @@ while true do
 			break
 		end
 
-		state = "waiting"
+		
 	else
 		term.clear()
 		local id,data =rednet.receive()
@@ -62,6 +70,7 @@ while true do
 		term.setTextColour( colours.white )
 		term.setBackgroundColour( colours.blue )
 		term.write("Fuel:"..data[4].."  Direccion:"..data[5])
+		term.setBackgroundColour( colours.black )
 		print("Frente:"..data[1])
 		print("Arriba:"..data[3])
 		print("Abajo:"..data[2])
