@@ -38,6 +38,10 @@ while true do
 			turtle.down()
 		end
 
+		if response == "f" then
+			break
+		end
+
 		if response == "r" then
 			if turtle.refuel() == false then 
 				rednet.send(idComputer,"error")
