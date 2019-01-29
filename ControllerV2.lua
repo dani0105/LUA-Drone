@@ -3,8 +3,9 @@ local state = "ready"
 term.clear()
 print("Press Enter")
 while true do 
+	local event, key
 	if state == "ready" then
-		local event, key = os.pullEvent("key")
+		event, key = os.pullEvent("key")
 		if key == keys.up then
 			rednet.broadcast("up")
 			state = "waiting"
