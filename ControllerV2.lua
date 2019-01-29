@@ -11,6 +11,16 @@ while true do
 			state = "waiting"
 		end
 
+		if key == keys.down then
+			rednet.broadcast("down")
+			state = "waiting"
+		end
+
+		if key == keys.s then
+			rednet.broadcast("s")
+			state = "waiting"
+		end
+
 		if key == keys.a then
 			rednet.broadcast("a")
 			state = "waiting"
@@ -21,8 +31,13 @@ while true do
 			state = "waiting"
 		end
 
+		if key == keys.w then
+			rednet.broadcast("w")
+			state = "waiting"
+		end
+
 		if key == keys.enter then
-			rednet.broadcast("")
+			rednet.broadcast("enter")
 			state = "waiting"
 		end
 	else
@@ -30,7 +45,7 @@ while true do
 		local id,data =rednet.receive()
 		term.clear()
 		term.setCursorPos(1,1)
-		write("Fuel:"..data[4].."     Direccion:"..data[5])
+		write("Fuel:"..data[4].."  Direccion:"..data[5])
 		term.setCursorPos(1,3)
 		write("Frente:"..data[1])
 		term.setCursorPos(1,4)
