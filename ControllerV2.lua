@@ -3,7 +3,7 @@ local state = "ready"
 term.clear()
 
 term.setCursorPos(6,4)
-print(os.getComputerId())
+print(os.getComputerID())
 term.setCursorPos(5,6)
 print("Press Enter")
 while true do 
