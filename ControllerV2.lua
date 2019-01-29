@@ -84,6 +84,7 @@ while true do
 
 		term.setCursorPos(1,9)
 		print("Inventario")
+		local f = 1
 		for i=1,16 do
 			if data[7][i] > 32 and data[7][i] < 49 then
 				term.setTextColour( colours.yellow )
