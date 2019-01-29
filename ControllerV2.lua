@@ -11,8 +11,18 @@ while true do
 			state = "waiting"
 		end
 
+		if key == keys.a then
+			rednet.broadcast("a")
+			state = "waiting"
+		end
+
+		if key == keys.d then
+			rednet.broadcast("d")
+			state = "waiting"
+		end
+
 		if key == keys.enter then
-			rednet.broadcast("up")
+			rednet.broadcast("")
 			state = "waiting"
 		end
 	else
@@ -26,7 +36,7 @@ while true do
 		print("Frente:"..data[1])
 		print("Arriba:"..data[3])
 		print("Abajo:"..data[2])
-		local state = "ready"
+		state = "ready"
 	end
 end
 
