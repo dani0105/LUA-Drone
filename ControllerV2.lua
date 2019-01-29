@@ -85,7 +85,6 @@ while true do
 		term.setCursorPos(1,9)
 		print("Inventario")
 		for i=1,16 do
-			f = f+1
 			if data[7][i] > 32 and data[7][i] < 49 then
 				term.setTextColour( colours.yellow )
 			elseif data[7][i] > 50 then
@@ -100,7 +99,7 @@ while true do
 			else
 				write(data[7][i].." ")
 			end
-			local f = 1
+			f = f+1
 		end
 		state = "ready"
 	end
