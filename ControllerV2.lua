@@ -74,7 +74,7 @@ while true do
 		local f = 1
 		for i=1,16 do
 			f = f+1
-			if f ==4 then
+			if f > 4 then
 				write("\n"..data[7][i].." ")
 				f=1
 			else
