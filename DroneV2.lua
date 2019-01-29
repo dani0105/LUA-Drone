@@ -60,13 +60,13 @@ while true do
 		end
 		local done,arriba = turtle.inspectUp()
 
-		if done==false then
+		if done then
 			arriba=arriba.name
 		else
 			arriba = "nada"
 		end
 		local done,abajo = turtle.inspectDown()
-		if done==false then
+		if done then
 			abajo=abajo.name
 		else
 			abajo = "nada"

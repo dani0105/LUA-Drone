@@ -1,5 +1,7 @@
 rednet.open("back")
 local state = "ready"
+term.clear()
+print("Press Enter")
 while true do 
 	if state == "ready" then
 		local event, key = os.pullEvent("key")
@@ -20,15 +22,9 @@ while true do
 		write("Fuel:"..data[4].."     Direccion:"..data[5])
 		term.setCursorPos(1,3)
 
-		write("Frente:")
-		write(data[1])
-
-		write("\nArriba:")
-		write(data[3])
-
-		write("\nAbajo:")
-		write(data[2])
-
+		print("Frente:"..data[1])
+		print("Arriba:"..data[3])
+		print("Abajo:"..data[2])
 		local state = "ready"
 	end
 end
