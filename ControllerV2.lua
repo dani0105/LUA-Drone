@@ -84,7 +84,6 @@ while true do
 
 		term.setCursorPos(1,9)
 		print("Inventario")
-		local f = 1
 		for i=1,16 do
 			f = f+1
 			if data[7][i] > 32 and data[7][i] < 49 then
@@ -94,12 +93,14 @@ while true do
 			else
 				term.setTextColour( colours.lime )
 			end
+
 			if f > 4 then
-				term.write("\n"..data[7][i].." ")
+				write("\n"..data[7][i].." ")
 				f=1
 			else
-				term.write(data[7][i].." ")
+				write(data[7][i].." ")
 			end
+			local f = 1
 		end
 		state = "ready"
 	end
