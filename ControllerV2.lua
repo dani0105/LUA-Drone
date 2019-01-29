@@ -19,9 +19,16 @@ while true do
 		term.setCursorPos(1,1)
 		write("Fuel:"..data[4].."     Direccion:"..data[5])
 		term.setCursorPos(1,3)
-		print("Frente:"..data[1])
-		print("Arriba:"..data[3])
-		print("Abajo:"..data[2])
+
+		write("Frente:")
+		write(data[1])
+
+		write("\nArriba:")
+		write(data[3])
+
+		write("\nAbajo:")
+		write(data[2])
+
 		local state = "ready"
 	end
 end
