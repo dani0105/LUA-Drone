@@ -45,6 +45,13 @@ while true do
 			break
 		end
 
+		if response == "e" then
+			while turtle.suck() do
+
+			end
+			errorText = "Recoleccion terminada"
+		end
+
 		if response == "r" then
 			if turtle.refuel() == false then 
 				errorText="no se pude recargar"
@@ -80,8 +87,11 @@ while true do
 		end
 
 		fuel = turtle.getFuelLevel()
-
-		Table = {frente,arriba,abajo,fuel,direction,errorText}
+		local inventory 
+		for i=1,16 do
+			table.insert(inventory,turtle.getItemCount(i))
+		end
+		Table = {frente,arriba,abajo,fuel,direction,errorText,inventory}
 		rednet.send(idComputer,Table)
 
 	end

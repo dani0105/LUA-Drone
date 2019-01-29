@@ -50,6 +50,11 @@ while true do
 			rednet.broadcast("r")
 			state = "waiting"
 		end
+
+		if key == keys.e then
+			rednet.broadcast("e")
+			break
+		end
 	else
 		term.clear()
 		local id,data =rednet.receive()
@@ -63,6 +68,11 @@ while true do
 		term.setCursorPos(1,6)
 		print("Mensaje:")
 		print(data[6])
+
+		term.setCursorPos(1,9)
+		for i=1,16 do
+			write(data[7][i].." ")
+		end
 		state = "ready"
 	end
 end
