@@ -53,7 +53,7 @@ while true do
 		end
 
 		if response == "r" then
-			if turtle.refuel() == false then 
+			if turtle.refuel(1) == false then 
 				errorText="no se pude recargar"
 			else
 				errorText="recargado"
