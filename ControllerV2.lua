@@ -1,9 +1,6 @@
 rednet.open("back")
-
-rednet.brodcast("done")
-sleep(1)
+rednet.broadcast("done")
 local id,data =rednet.receive()
-
 
 term.clear()
 term.setCursorPos(1,1)
@@ -19,7 +16,7 @@ while true do
 	if state == "ready" then
 		local event, key = os.pullEvent("key")
 		if key == keys.up then
-			rednet.brodcast("up")
+			rednet.broadcast("up")
 			state = "waiting"
 		end
 	else

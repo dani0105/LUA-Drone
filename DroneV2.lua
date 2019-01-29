@@ -1,6 +1,5 @@
 rednet.open("right")
 local state = "wating"
-
 print("Puerto Abierto, listo para la conexion")
 write("\nID de la computadora:")
 local idComputer= tonumber(read())

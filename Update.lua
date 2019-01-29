@@ -1,7 +1,7 @@
---f=open("update","w")
+--f=fs.open("update","w")
 --data = http.get("https://raw.githubusercontent.com/dani0105/LUA-Drone/master/Update.lua")
 --f.write(data.readAll())
---file.close()
+--f.close()
 
 print("1) Drone")
 print("2) Update")
