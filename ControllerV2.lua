@@ -85,6 +85,8 @@ while true do
 		state = "ready"
 	end
 end
+term.clear()
+term.setCursorPos(1,1)
 
 
 
