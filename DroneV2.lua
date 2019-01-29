@@ -2,12 +2,13 @@ rednet.open("right")
 print("Puerto Abierto, listo para la conexion")
 write("\nID de la computadora:")
 local idComputer= tonumber(read())
-
 local directions = {"norte","este","sur","oeste"}
 local j = 1
 local direction = directions[j]
 local errorText = ""
 
+term.clear()
+print("Controlado remotamente")
 while true do
 	local id,response =rednet.receive()
 	if id ==idComputer then
