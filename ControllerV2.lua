@@ -60,7 +60,7 @@ while true do
 		term.clear()
 		term.setCursorPos(1,1)
 		term.setTextColour( colours.white )
-		term.setBackgroundColour( colores.blue )
+		term.setBackgroundColour( colours.blue )
 		term.write("Fuel:"..data[4].."  Direccion:"..data[5])
 		print("Frente:"..data[1])
 		print("Arriba:"..data[3])
@@ -70,7 +70,7 @@ while true do
 		print("Mensaje:")
 		term.setCursorPos(1,7)
 		term.setTextColour( colours.yellow )
-		term.setBackgroundColour( colores.black )
+		term.setBackgroundColour( colours.black )
 		term.write(data[6])
 
 		term.setCursorPos(1,9)
