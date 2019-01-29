@@ -80,7 +80,7 @@ while true do
 			f = f+1
 			if data[7][i] > 32 and data[7][i] < 49 then
 				term.setTextColour( colours.yellow )
-			elseif data[7][i] > 50
+			elseif data[7][i] > 50 then
 				term.setTextColour( colours.red )
 			else
 				term.setTextColour( colours.lime )
