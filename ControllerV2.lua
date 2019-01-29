@@ -13,14 +13,15 @@ while true do
 			state = "waiting"
 		end
 	else
+		term.clear()
 		local id,data =rednet.receive()
 		term.clear()
 		term.setCursorPos(1,1)
-		write("Fuel:"..data[5].."     Direccion:"..data[4])
+		write("Fuel:"..data[4].."     Direccion:"..data[5])
 		term.setCursorPos(1,3)
 		print("Frente:"..data[1])
-		print("Arriba:"..data[2])
-		print("Abajo:"..data[3])
+		print("Arriba:"..data[3])
+		print("Abajo:"..data[2])
 		local state = "ready"
 	end
 end
