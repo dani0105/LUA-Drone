@@ -6,6 +6,7 @@ local idComputer= tonumber(read())
 local directions = {"norte","este","sur","oeste"}
 local j = 1
 local direction = directions[j]
+local errorText = ""
 
 while true do
 	local id,response =rednet.receive()
@@ -46,9 +47,9 @@ while true do
 
 		if response == "r" then
 			if turtle.refuel() == false then 
-				rednet.send(idComputer,"error")
+				errorText="no se pude recargar"
 			else
-				rednet.send(idComputer,"completado")
+				errorText="recargado"
 			end
 
 		end
@@ -80,7 +81,7 @@ while true do
 
 		fuel = turtle.getFuelLevel()
 
-		Table = {frente,arriba,abajo,fuel,direction}
+		Table = {frente,arriba,abajo,fuel,direction,errorText}
 		rednet.send(idComputer,Table)
 
 	end

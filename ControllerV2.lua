@@ -45,6 +45,11 @@ while true do
 			rednet.broadcast("f")
 			break
 		end
+
+		if key == keys.r then
+			rednet.broadcast("r")
+			state = "waiting"
+		end
 	else
 		term.clear()
 		local id,data =rednet.receive()
@@ -54,6 +59,10 @@ while true do
 		print("Frente:"..data[1])
 		print("Arriba:"..data[3])
 		print("Abajo:"..data[2])
+
+		term.setCursorPos(1,6)
+		print("Mensaje:")
+		print(data[6])
 		state = "ready"
 	end
 end
