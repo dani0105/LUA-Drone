@@ -52,14 +52,28 @@ while true do
 		direction = directions[j]
 
 		local done,frente = turtle.inspect()
-		if done==false then frente="nada" end
-		local done,abajo = turtle.inspectUp()
-		if done==false then abajo="nada" end
-		local done,arriba = turtle.inspectDown()
-		if done==false then arriba="nada" end
+
+		if done then 
+			frente= frente.name
+		else
+			frente = "nada"
+		end
+		local done,arriba = turtle.inspectUp()
+
+		if done==false then
+			arriba=arriba.name
+		else
+			arriba = "nada"
+		end
+		local done,abajo = turtle.inspectDown()
+
+		if done==false then
+			abajo=abajo.name
+		else
+			abajo = "nada"
+		end
+
 		fuel = turtle.getFuelLevel()
-
-
 		Table = {frente,abajo,arriba,fuel,direction}
 		rednet.send(idComputer,Table)
 
