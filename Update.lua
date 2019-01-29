@@ -6,7 +6,7 @@
 print("1) Drone")
 print("2) Update")
 print("3) DroneV2")
-print("3) ControllerV2")
+print("4) ControllerV2")
 
 
 local option 	= tonumber(read())
