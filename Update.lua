@@ -1,5 +1,13 @@
+--f=open("update","w")
+--data = http.get("https://raw.githubusercontent.com/dani0105/LUA-Drone/master/Update.lua")
+--f.write(data.readAll())
+--file.close()
+
 print("1) Drone")
 print("2) Update")
+print("3) DroneV2")
+print("3) ControllerV2")
+
 
 local option 	= tonumber(read())
 local url 		= ""
@@ -12,6 +20,12 @@ if option == 1 then
 elseif option == 2 then
 	url		= "https://raw.githubusercontent.com/dani0105/LUA-Drone/master/Update.lua"
 	name 	= "update"
+elseif option == 3 then 
+	url		= "https://raw.githubusercontent.com/dani0105/LUA-Drone/master/DroneV2.lua"
+	name 	= "DroneV2"
+elseif option == 4 then 
+	url		= "https://raw.githubusercontent.com/dani0105/LUA-Drone/master/ControllerV2.lua"
+	name 	= "ControllerV2"
 else
 	print("opcion invalidad")
 	return
