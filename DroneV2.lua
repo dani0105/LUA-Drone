@@ -78,11 +78,9 @@ while true do
 			abajo = "nada"
 		end
 
-		local x, y, z = gps.locate(5)
-
 		fuel = turtle.getFuelLevel()
 
-		Table = {frente,arriba,abajo,fuel,direction,x,y,z}
+		Table = {frente,arriba,abajo,fuel,direction}
 		rednet.send(idComputer,Table)
 
 	end

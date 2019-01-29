@@ -51,11 +51,6 @@ while true do
 		term.clear()
 		term.setCursorPos(1,1)
 		print("Fuel:"..data[4].."  Direccion:"..data[5])
-		write("x:"..data[6].."y:"..data[7].."x:"..data[8])
-
-		local turtle = vector.new(data[6], data[7], data[8])
-		local position = vector.new(gps.locate(5))
-		write("  distancia:"..tostring(turtle-position))
 		print("Frente:"..data[1])
 		print("Arriba:"..data[3])
 		print("Abajo:"..data[2])
