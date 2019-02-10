@@ -58,7 +58,7 @@ while true do
 
 		if key == keys.e then
 			rednet.broadcast("e")
-			break
+			state = "waiting"
 		end
 
 		
