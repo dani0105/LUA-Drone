@@ -9,7 +9,7 @@ local term = require("term")
 
 function send(address, port, key, running)
 	local portsend = tonumber(port) - 1
-	modem.broadcast(portsend, serialization.serilize({direction = key,transmitter = running}))
+	modem.broadcast(portsend, serialization.serialize({direction = key,transmitter = running}))
 end
 
 modem.close()
@@ -33,7 +33,7 @@ if modem.isOpen(port) then
 	local connected = false
 	while true do
 		if not connected then
-			local _, _, address, _, _, data  event.pull("modem_message")
+			local _, _, address, _, _, data = event.pull("modem_message")
 			data = serialization.unserialize(data)
 			if data["state"] then
 				print(address..
@@ -53,7 +53,7 @@ if modem.isOpen(port) then
 				end
 				send(robotAddress, port, arg2, connected)
 
-				local _, _, _, _, _, response  event.pull("modem_message")
+				local _, _, _, _, _, response = event.pull("modem_message")
 				response = serialization.unserialize(response)
 			end	
 		end

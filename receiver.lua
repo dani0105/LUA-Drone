@@ -12,7 +12,7 @@ local robot = require("robot")
 modem.close()
 
 if #args < 1 then
-	print("Use command transmitter[port]")
+	print("Use command transmitter [port]")
 	return
 end
 
