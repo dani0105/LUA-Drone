@@ -1,13 +1,14 @@
 local component = require("component")
 local modem = component.modem
 local shell = require("shell")
-local args = require("event")
+local event = require("event")
+local args = shell.parse(...)
 local serialization = require("serialization")
 local keyboard = require("keyboard")
 local term = require("term")
 
 function send(address, port, key, running)
-	local porsen = tonumber(port) - 1
+	local portsend = tonumber(port) - 1
 	modem.broadcast(portsend, serialization.serilize({direction = key,transmitter = running}))
 end
 
